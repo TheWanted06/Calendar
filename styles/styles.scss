@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0%;
+}
+
+body {
+    font-family: Arial, sans-serif ;
+    text-align: center;
+    margin: 30px;
+    padding: 2rem;
+    height: 100vh;
+    background: linear-gradient(to bottom,#ff5e88,#ff9966);
+    h1{
+        text-align: center;
+        color:#fff;
+        margin-bottom: 2rem;
+    }
+    .wrapper {
+        width: 380px;
+        margin: auto;
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+        box-shadow: 0 0 5px #ccc;
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            .currentDate{
+                margin: 110 0 0 0;
+                font-size: 1.45rem;
+                font-weight: 500;
+            }
+            button{
+                height: 38px;
+                width: 38px;
+                margin: 110 0px;
+                text-align: center;
+                color:#878787;
+                font-size: 1.9rem;
+                border-radius: 20%;
+                cursor: pointer;
+                :last-child{
+                    margin-right: -10px;
+                }
+                :hover{
+                    background: #f2f2f2;
+                }
+            }
+        }
+        .calendar{ 
+            ul{
+                display: flex;
+                list-style: none;
+                flex-wrap: wrap;
+                text-align: center;
+                li{
+                    width: calc(100%/7);
+                    position: relative;
+                }
+            }
+            .weeks li{
+                font-weight: 500;
+            }
+            .days{
+                margin-bottom: 20px;
+                li{
+                    
+                    cursor: pointer;
+                    margin-top: 30px;
+                    z-index: 1;
+                    :hover{
+                        background: #f2f2f2;
+                    }
+                    
+                }
+                li::before{
+                    position: absolute;
+                    content: "";
+                    height: 40px;
+                    width: 40px;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    border-radius: 50%;
+                    z-index: -1;
+                }
+                li.inactive{
+                    color: #aaa;
+                }
+                li.active{
+                    color: #fff;
+                }
+                li.active::before{
+                    background-color: #985986;
+                }
+                
+            }
+        }
+    }
+}
+
+.days li:hover::before{
+    background: #f2f2f2;
+}
+
