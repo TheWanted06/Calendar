@@ -11,10 +11,109 @@ body {
   height: 100vh;
   background: linear-gradient(to bottom, #ff5e88, #ff9966);
 }
-body h1 {
-  text-align: center;
+body #overlay {
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+body #viewCard {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  color: black;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  margin: auto;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 20px;
+}
+body button {
+  background: white;
+  border: none;
+}
+body .search {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background: white;
+  border-radius: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 25px;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 10px;
+}
+body .search input[type=text] {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: white;
+  padding: 10px;
+  font-size: 17px;
+}
+body .icon {
+  width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  cursor: pointer;
+}
+body .top {
+  display: flex;
+  justify-content: space-around;
   color: #fff;
+  margin-right: 31%;
+}
+body .top h1 {
+  text-align: center;
   margin-bottom: 2rem;
+  justify-content: center;
+}
+body .top .Snav {
+  font-size: 30px;
+  cursor: pointer;
+  margin: 0 0 30px 0;
+}
+body .sidenav {
+  display: none;
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 60px;
+}
+body .sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+body .sidenav a:hover {
+  color: #f1f1f1;
+}
+body .sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
 }
 body .wrapper {
   width: 380px;
@@ -24,6 +123,7 @@ body .wrapper {
   border-radius: 5px;
   padding: 20px;
   box-shadow: 0 0 5px #ccc;
+  display: block;
 }
 body .wrapper header {
   display: flex;
@@ -96,7 +196,55 @@ body .wrapper .calendar .days li.active {
 body .wrapper .calendar .days li.active::before {
   background-color: #985986;
 }
-
-.days li:hover::before {
+body .wrapper .calendar .days li:hover::before {
   background: #f2f2f2;
+}
+body .TaskManager {
+  width: 100%;
+  max-width: 500px;
+  background: #fff;
+  margin: 100px auto 20px;
+  padding: 40px 30px 70px;
+  border-radius: 10px;
+  display: none;
+}
+body .TaskManager h2 {
+  color: #002765;
+  margin-bottom: 20px;
+}
+body .TaskManager .row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #edeef0;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-bottom: 25px;
+}
+body .TaskManager input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 10px;
+  font-weight: 14px;
+}
+body .TaskManager button {
+  border: none;
+  outline: none;
+  padding: 16px 50px;
+  background: #ff7e70;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 40px;
+}
+body .TaskManager ul li {
+  list-style: none;
+  font-size: 17px;
+  padding: 12px 8px 12px 0px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
 }/*# sourceMappingURL=styles.css.map */

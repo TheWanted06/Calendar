@@ -8,8 +8,41 @@
         <script src="script.js" defer></script>
     </head>
     <body>
-        <h1>Calendar</h1>
-        <div class="sidebar"></div>
+        <div id="overlay" onclick="off()">
+            <div id="viewCard">
+                <input type="radio" id="view1" name="Daily" value="view-D">
+                <label for="view1">Daily View</label><br>
+                <input type="radio" id="view2" name="Weekly" value="view-W">
+                <label for="view2">Weekly View</label><br>  
+                <input type="radio" id="view3" name="Monthly" value="view-M">
+                <label for="view3">Monthly View</label><br><br>
+                <input type="radio" id="view4" name="Quarterly" value="view-Q">
+                <label for="view4">Quarterly View</label><br>
+                <input type="radio" id="view5" name="Yearly" value="view-Y">
+                <label for="view5">Yearly View</label><br>  
+                <input type="radio" id="view6" name="To-do" value="view-T">
+                <label for="view6">To do list</label><br><br>
+            </div>
+        </div>
+        <div class="top">
+            <div class="shownav">
+                <span id="open" class="Snav" onclick="openNav()">&#9776;</span>
+            </div>
+            <h1 class="Title"></h1>
+        </div>
+        <div class="sidenav">
+            <a href="javascript:void(0)"class="closebtn" onclick="closeNav()">&times;</a>
+            <a onclick="openCalendar()">Calendar</a>
+            <a onclick="openTask()">Task Manager</a>
+        </div>
+        <div class="search">
+            <button onclick="firstBtn()"><img alt="s/b icon" id="firstIcon" class="icon" src="/assets/icons/search.png"/></button>
+            <input type="text" id="myInput" oninput="changeBtn()" placeholder="Search.."/>
+            <button id="viewBtn" onclick="onView()" ><img alt="view icon" class="icon" src="/assets/icons/menu-dark-outline.png"/></button>
+            <button id="filterBtn" onclick="onFilter()"><img alt="filter icon" class="icon" src="/assets/icons/filter.png"/></button>
+            <button onclick="lastBtn()"><img alt="options/search icon" id="o/sIcon" class="icon" src="/assets/icons/options-3dots-veritical.png"/></button>
+        </div>
+
         <div class="wrapper">
             <!-- Calendar header -->
             <header>
@@ -34,7 +67,18 @@
                 </ul>
             </div>
         </div>
-        <div class="Taskbar"></div>
+        <div class="TaskManager">
+            <h2>Task list</h2>
+            <div class="row">
+                <input type="text" id="input-box" aria-placeholder="Add your text"/>
+                <button>Add</button>
+            </div>
+            <ul id="list-container">
+                <li>Task1</li>
+                <li>Task2</li>
+                <li>Task3</li>
+            </ul>
+        </div>
     </body>
 
 </html>
